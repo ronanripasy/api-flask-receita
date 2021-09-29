@@ -9,6 +9,7 @@ flask-sqlalchemy = "*"
 sqlalchemy = "*"
 flask-bootstrap = "*"
 faker = "*"
+flask-restful = "*"
 
 [dev-packages]
 

@@ -3,14 +3,6 @@ from faker import Faker
 from models import Receita
 from provider import ReceitaProvider
 
-def insere_receita_faker():
-    fake = Faker()
-    fake.add_provider(ReceitaProvider)
-
-    for _ in range(61):
-        receita = Receita(titulo=fake.receita_titulo(), descricao=fake.text(max_nb_chars=20), data=fake.date_between(start_date='-5y', end_date='today'))
-        receita.save()
-
 def insere_receita():
     receita = Receita(titulo='Feijão ovo', descricao='Feijão ovo um sabor sem igual', data=date.today())
     receita.save()
@@ -19,7 +11,6 @@ def all_receitas():
     receitas = Receita.query.all()
     for i in receitas:
         print(i.titulo)
-    # print(receitas)
 
 def filtra_receita(filtro):
     try:
